@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-center">
+<div class="container">
+<h1>Sign Up today!</h1>
+{% if error %}
+<br/>
+{{error}}
+<br/>
+{% endif %}
+
+<form method="POST" action="{% url 'signup' %}">
+  {% csrf_token %}
+  <div class="container">
+  :שם פרטי
+  <br/>
+  <input type="text" name="first name" />
+  <br/>
+  :שם משפחה
+  <br/>
+  <input type="text" name="last name" />
+  <br/>
+  :שם משתמש
+  <br/>
+  <input type="text" name="username" />
+  <br/>
+  :סיסמא
+  <br/>
+  <input type="password" name="password1" />
+  <br/>
+  :חזור על הסיסמא שנית
+  <br/>
+  <input type="password" name="password2" />
+  <br/>
+  <br/>
+  <input class="btn btn-dark" type="submit" value="הירשם"/>
+</form>
+</div>
+</div>
+</div>
+{% endblock %}

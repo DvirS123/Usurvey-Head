@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-right">
+<div class="container">
+<h1>צור ביקורת</h1>
+{% if error %}
+<br/>
+{{error}}
+<br/>
+{% endif %}
+
+<form method="POST" action="{% url 'makereview' %}" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="container">
+  :כותרת
+  <br/>
+  <input type="text" name="title" />
+  <br/>
+  :תוכן
+  <br/>
+  <input type="textbox" name="body" />
+  <br/>
+  :כתובת האתר של בית העסק
+  <br/>
+  <input type="text" name="url" />
+  <br/>
+  :תמונה של בית העסק(אופציונלי)
+  <br/>
+  <input type="file" name="image" />
+  <br/>
+  <br/>
+  <input class="btn btn-primary" type="submit" value="צור ביקורת"/>
+</form>
+</div>
+</div>
+</div>
+{% endblock %}
