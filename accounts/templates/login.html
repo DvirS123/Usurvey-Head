@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-right">
+<div class="container">
+<h1>כניסה</h1>
+{% if error %}
+<br/>
+{{error}}
+<br/>
+{% endif %}
+
+<form method="POST" action="{% url 'login' %}">
+  {% csrf_token %}
+  <div class="container">
+  :שם משתמש
+  <br/>
+  <input type="text" name="username" />
+  <br/>
+  :סיסמא
+  <br/>
+  <input type="password" name="password" />
+  <br/>
+  <br/>
+  <input class="btn btn-primary" type="submit" value="login"/>
+</form>
+</div>
+</div>
+</div>
+{% endblock %}
