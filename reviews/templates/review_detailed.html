@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class = text-center>
+	<div class = container>
+		<h1>{{review.Title}}</h1> by: {{review.User_name}}
+		<br/>
+		<img src="{{ review.Image.url }}"/>
+		<br/>
+		Votes: {{review.Votes}}
+		<br/>
+		<input class="btn btn-primary" type="submit" value="תן נקודה!"/>
+		<div class = text-left>
+			{{review.Date}}
+		</div>
+		<br/>
+		<p>{{review.Body}}</p>
+		<br/>
+		Link: <a href="{{review.Source}}">{{review.Source}}</a>
+		<br/>
+	</div>
+</div>
+
+
+
+
+{% endblock %}
