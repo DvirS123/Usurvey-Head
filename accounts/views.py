@@ -6,7 +6,7 @@ def signup(request):
 		###SUBMITING SIGN UP FORM###
 	if request.method == 'POST':
 		#user entered info and submittes
-		if len(request.POST['first name']) > 14 or len(request.POST['last name']) > 14 or len(request.POST['username']) > 14 or len(request.POST['password1']) > 14 or len(request.POST['password2']) > 14:
+		if len(request.POST['first_name']) > 14 or len(request.POST['last_name']) > 14 or len(request.POST['username']) > 14 or len(request.POST['password1']) > 14 or len(request.POST['password2']) > 14:
 			return render(request, 'signup.html',{'error':'One of the details you entered is too long, must be less than 15 charachters.'})
 		if request.POST['password1'] == request.POST['password2']:
 			#if passwords match
@@ -15,7 +15,7 @@ def signup(request):
 				return render(request, 'signup.html',{'error':'Username already exists!'})
 
 			except User.DoesNotExist:
-				user = User.objects.create_user(request.POST['username'],password = request.POST['password1'])
+				user = User.objects.create_user(request.POST['username'],password = request.POST['password1'],first_name = request.POST['first_name'],last_name = request.POST['last_name'],email = request.POST['email'])
 				auth.login(request,user) 
 				return redirect('home')
 

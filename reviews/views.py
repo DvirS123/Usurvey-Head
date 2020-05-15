@@ -2,10 +2,15 @@ from django.shortcuts import render ,redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Review
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 # Create your views here.
 def home(request):
-	return render(request, 'home.html')
+	if request.user.is_authenticated:
+		full_name = request.user.get_full_name()
+		return render(request, 'home.html',{'full_name':full_name})
+	else:
+		return render(request, 'home.html')
 
 @login_required
 def makereview(request):
