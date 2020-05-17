@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% load staticfiles %}
 <hr color="dark"/>
+<div class = "container">
   <body>
 <main role="main">
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -12,41 +14,39 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
-        <div class="container">
-          <div class="carousel-caption text-left">
-            <h1>Example headline.</h1>
-            <p>
+        <img class="img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" src="{% static 'street_restraunts.jpg' %}" role="img"></img>
+          <div class="carousel-caption">
+            <h1 style="color:yellow">!הירשם עכשיו</h1>
+            <p style="color:yellow">
             <br/>
-            !הרשם עכשיו
+            לאחר סיום תהליך ההרשמה תוכלו להעלות ביקורות משלכם
             </p>
             <p><a class="btn btn-lg btn-primary" href="{% url 'signup' %}" role="button">הרשמה</a></p>
           </div>
         </div>
-      </div>
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+        <img class="img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" src="{% static 'watching_movie.jpg' %}" role="img"></img>
         <div class="container">
           <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>
+            <h1 style="color:yellow">התחבר</h1>
+            <p style="color:yellow">
             	<br/>
-            	!או שאם אתה רשום התחבר עכשיו
+            	התחבר והצטרף עכשיו לגולשים האחריםת הגב על ביקורות וגלה איפה הכי כדאי לקבל שירות איכותי ואדיב.
             </p>
             <p><a class="btn btn-lg btn-primary" href="{% url 'login'%}" role="button">התחבר</a></p>
           </div>
         </div>
       </div>
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+        <img class="img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" src="{% static 'call.jpg' %}" role="img"></img>
         <div class="container">
-          <div class="carousel-caption text-right">
-            <h1>One more for good measure.</h1>
-            <p>
+          <div class="carousel-caption">
+            <h1 style="color:yellow">צור קשר</h1>
+            <p style="color:yellow">
             	<br/>
-            	צור קשר
+            	צור קשר במידה ויש בעייה
             </p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">צור קשר</a></p>
+            <p><a class="btn btn-lg btn-primary" href="mailto:dvirshiri.123@gmail.com" role="button">צור קשר</a></p><!--contact me -->
           </div>
         </div>
       </div>
@@ -60,6 +60,52 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+</div>
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">בתקופה של היום, חברות רבות שמות דגש על יעילות<span class="text-muted">על פני שירות אדיב.</span></h2>
+        <p class="lead">הרבה בתי עסק שוכחים כי הדבר החשוב ביותר הוא לתת שירות ללקוחות שלהם</p>
+      </div>
+      <div class="col-md-5">
+        <img class="featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" src="{% static 'service.jpg' %}" preserveAspectRatio="xMidYMid slice" role="img" aria-label="image not available"><title>Placeholder</title>
+        	<rect width="100%" height="100%" fill="#eee"/></svg>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">גם לכם נמאס לרדוף בטלפונים ביכדי לקבל יחס הוגן ושווה?<span class="text-muted">גם לנו!</span></h2>
+        <p class="lead">כמה פעמים הלכתם למסעדה או לכל בית עסק, או אפילו בנוחיות הבית שלכם ביקשתם הזמנה של מוצר מסויים ובתמורה קיבלתם יחס לא הגון שגרם לכם להרגיש כאילו אתם רודפים אחרי בית העסק?</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img class="featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" src="{% static 'tired.jpg' %}" preserveAspectRatio="xMidYMid slice" role="img" aria-label="image not available"><title>Placeholder</title>
+        	<rect width="100%" height="100%" fill="#eee"/></svg>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Aבתקווה המערכת שלנו תוכל לטפל בתופעה הזו<span class="text-muted">Usurvey</span></h2>
+        <p class="lead">כאן אנחנו ניכנסים לתמונה - ביוסרביי תוכלו לגלוש, לצפות בביקורות של גולשים אחרים ואף תוכלו לדרג את אותם גולשים המשאירים ביקורת, פונקצית המערכת של צבירת נקודות אימון על ידי גולשים, תאפשר שינוי מהפכני ביכולת של הרשת לאתר את המקום המשתלם ביותר ואף עשויה לאפשר חשיפה של בתי עסק קטנים שלהם מגיעה הערכה אמיתית</p>
+      </div>
+      <div class="col-md-5">
+        <img class="featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" src="{% static 'food.jpg' %}" preserveAspectRatio="xMidYMid slice" role="img" aria-label="image not available"><title>Placeholder</title>
+        	<rect width="100%" height="100%" fill="#eee"/></svg>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
 
 
   <!-- Marketing messaging and featurettes
@@ -91,49 +137,7 @@
     </div><!-- /.row -->
 
 
-    <!-- START THE FEATURETTES -->
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-      <div class="col-md-5 order-md-1">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <!-- /END THE FEATURETTES -->
-
-  </div><
+  </div>
 </main>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
