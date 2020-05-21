@@ -1,4 +1,5 @@
 <!doctype html>
+{% load staticfiles %}
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -46,7 +47,7 @@
   <body>
     <header>
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="{% url 'home' %}">Usurvey</a>
+  <a class="navbar-brand" href="{% url 'home' %}"><img class="img-fluid" height="100" width="100" src="{% static 'Usurvey_logo.png' %}" role="logo"></img></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
