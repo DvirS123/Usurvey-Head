@@ -42,3 +42,10 @@ def all_reviews(request):
 def review_detailed(request, review_id):
 	detailreview = get_object_or_404(Review, pk=review_id)
 	return render(request,'review_detailed.html', {'review':detailreview})
+
+def rate(request,review_id):
+		if request.method == 'POST':
+			detailreview = get_object_or_404(Review, pk=review_id)
+			detailreview.Votes_total += int(request.POST['Votes'])
+			detailreview.save()
+			return redirect('/Reviews/' + str(review_id))
